@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Siswa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Data Siswa</h1>
+
+    <form id="form-siswa" autocomplete="off">
+      <div class="form-group">
+        <label for="nis">NIS:</label>
+        <input type="text" id="nis" maxlength="10" inputmode="numeric"
+               pattern="[0-9]{1,10}" placeholder="Contoh: 07129011" required>
+        <small class="bantuan">Hanya angka, maksimal 10 digit.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" placeholder="Contoh: Asep" required>
+      </div>
+
+      <div class="form-group">
+        <label for="kelas">Kelas:</label>
+        <input type="text" id="kelas" placeholder="Contoh: X IPA 1" required>
+      </div>
+
+      <div class="form-group">
+        <span class="form-label" id="label-jenis-kelamin">Jenis Kelamin:</span>
+        <div class="pilihan-tombol" role="radiogroup" aria-labelledby="label-jenis-kelamin">
+          <input type="radio" id="jenis-kelamin-laki" name="jenis-kelamin" value="Laki-laki" required>
+          <label for="jenis-kelamin-laki">Laki-laki</label>
+          <input type="radio" id="jenis-kelamin-perempuan" name="jenis-kelamin" value="Perempuan" required>
+          <label for="jenis-kelamin-perempuan">Perempuan</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="agama">Agama:</label>
+        <select id="agama" required>
+          <option value="">Pilih agama</option>
+          <option value="Islam">Islam</option>
+          <option value="Kristen Protestan">Kristen Protestan</option>
+          <option value="Katolik">Katolik</option>
+          <option value="Hindu">Hindu</option>
+          <option value="Buddha">Buddha</option>
+          <option value="Konghucu">Konghucu</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="alamat">Alamat:</label>
+        <textarea id="alamat" placeholder="Masukkan alamat siswa" required></textarea>
+      </div>
+
+      <button type="submit" id="btn-simpan">Simpan Data</button>
+    </form>
+
+    <h2>Daftar Data Siswa</h2>
+
+    <table id="tabel-siswa">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>NIS</th>
+          <th>Nama</th>
+          <th>Kelas</th>
+          <th>Jenis Kelamin</th>
+          <th>Agama</th>
+          <th>Alamat</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="data-siswa">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

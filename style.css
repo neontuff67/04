@@ -1,0 +1,310 @@
+/* ====== Palet Dusty Blue (Dark Mode) - sama seperti 01 ====== */
+:root {
+  --dusty-950: #25364a;
+  --dusty-900: #34495e;
+  --dusty-850: #2b3e52;
+  --dusty-700: #526a82;
+  --dusty-600: #647e97;
+  --dusty-500: #7890a8;
+  --dusty-400: #8ea3b8;
+  --dusty-300: #b0c0d0;
+  --garis: #52677d;
+  --teks-utama: #edf1f5;
+  --teks-lembut: #c1ccd7;
+  --teks-samar: #a4b2c0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--dusty-950);
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  color: var(--teks-utama);
+}
+
+::selection {
+  background: var(--dusty-300);
+  color: var(--dusty-950);
+}
+
+.container {
+  background-color: var(--dusty-900);
+  border: 1px solid var(--dusty-700);
+  padding: 34px;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  max-width: 1100px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Garis aksen di atas kartu */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--dusty-400);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  color: #f0f5fd;
+  font-size: 1.55rem;
+  margin: 6px 0 8px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+/* Garis kecil di bawah judul */
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--dusty-300);
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin-top: 32px;
+  border-top: 1px solid rgba(176, 192, 208, 0.2);
+  padding-top: 22px;
+  color: #c9d9f2;
+}
+
+/* ====== Form ====== */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--teks-lembut);
+}
+
+.form-group .form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--teks-lembut);
+}
+
+.bantuan {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: var(--teks-samar);
+}
+
+/* ====== Pilihan jenis kelamin ====== */
+.pilihan-tombol {
+  display: flex;
+  gap: 10px;
+}
+
+.form-group .pilihan-tombol input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  opacity: 0;
+}
+
+.pilihan-tombol label {
+  min-width: 120px;
+  margin: 0;
+  padding: 10px 16px;
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  background-color: var(--dusty-850);
+  color: var(--teks-utama);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.pilihan-tombol input:checked + label {
+  border-color: var(--dusty-300);
+  background-color: var(--dusty-600);
+}
+
+.pilihan-tombol input:focus-visible + label {
+  outline: 2px solid var(--dusty-300);
+  outline-offset: 2px;
+}
+
+/* ====== Input, select, textarea ====== */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--dusty-850);
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--teks-utama);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9aabbd;
+}
+
+.form-group select option {
+  background-color: var(--dusty-850);
+  color: var(--teks-utama);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--dusty-300);
+  box-shadow: 0 0 0 3px rgba(176, 192, 208, 0.2);
+}
+
+.form-group textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+#btn-simpan {
+  width: 100%;
+  padding: 12px;
+  background: var(--dusty-500);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+#btn-simpan:hover {
+  background: var(--dusty-600);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 54, 74, 0.45);
+}
+
+#btn-simpan:active {
+  transform: translateY(0);
+}
+
+/* ====== Tabel ====== */
+#tabel-siswa {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+#tabel-siswa th,
+#tabel-siswa td {
+  border: 1px solid var(--garis);
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#tabel-siswa th {
+  background: var(--dusty-700);
+  color: #f0f5fd;
+  letter-spacing: 0.4px;
+}
+
+#tabel-siswa td {
+  color: #dce6f6;
+}
+
+#tabel-siswa tbody tr:nth-child(even) {
+  background-color: rgba(176, 192, 208, 0.07);
+}
+
+#tabel-siswa tbody tr:hover {
+  background-color: rgba(176, 192, 208, 0.14);
+}
+
+/* Badge untuk NIS */
+.badge-nis {
+  display: inline-block;
+  background: rgba(176, 192, 208, 0.15);
+  border: 1px solid rgba(176, 192, 208, 0.3);
+  color: #d3dee8;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Pesan saat belum ada data */
+.empty-state {
+  padding: 26px 10px;
+  text-align: center;
+  color: var(--teks-samar);
+  font-style: italic;
+}
+
+.btn-hapus {
+  background-color: transparent;
+  color: #ff8a93;
+  border: 1px solid rgba(224, 82, 99, 0.45);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+.btn-hapus:hover {
+  background-color: #e05263;
+  color: #ffffff;
+  border-color: #e05263;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 14px;
+  }
+
+  .container {
+    padding: 22px;
+  }
+
+  #tabel-siswa {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
